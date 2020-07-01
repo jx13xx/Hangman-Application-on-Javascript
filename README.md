@@ -141,6 +141,32 @@ This OOP file contains the main architecutre of the Hangman Game contains differ
         }
     }
     ```
+    
+    ## Explaing the makeGuess() function 
+    The 
+    ```javascript
+       makeGuess(guess) {
+        guess = guess.toLowerCase()
+        const isUnique = !this.guessedLetters.includes(guess)
+        const isBadGuess = !this.word.includes(guess)
+
+        if (this.status !== 'playing') {
+            return
+        }
+
+        if (isUnique) {
+            this.guessedLetters.push(guess)
+        }
+
+        if (isUnique && isBadGuess) {
+            this.remainingGuesses--
+        }
+
+        this.calculateStatus()
+    }
+    
+    
+    ```
 
 
 
