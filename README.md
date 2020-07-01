@@ -38,3 +38,7 @@ const render = () => {
 
 
 ```
+
+### Adding an Event Listener on the web browser
+The **EventTarget** meethod addEventListener()  <mark>Marked text</mark>
+
