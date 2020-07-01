@@ -110,6 +110,37 @@ const getLocation = async () => {
 
 
 ```
-  
+## Hangman.js
+This OOP file contains the main architecutre of the Hangman Game contains different methods that builts up the game
+
+### Calculating the status of the game - Failed, Finished or Playing
+ The const variable **finished** checks if the letter from the puzzle are there in the **guessedLetters**. The guessedLetters is an [] array created at the constructor of the class. The function **makeGuess()** puts words in the guessLetters array list. 
+ 
+ The **finished** variable checks for each letter from the variable **word** and checks if it present in the guessedLetters based on that the following functions are created.
+ 
+ **Note:** The function *every* is a very useful method it will be used mostly in arrays lists etc. 
+```javascript
+   calculateStatus() {
+        const finished = this.word.every((letter) => this.guessedLetters.includes(letter) || letter === ' ')
+
+        if (this.remainingGuesses === 0) {
+            this.status = 'failed'
+        } else if (finished) {
+            this.status = 'finished'
+        } else {
+            this.status = 'playing'
+        }
+    }
+    get statusMessage() {
+        if (this.status === 'playing') {
+            return `Guesses left: ${this.remainingGuesses}`
+        } else if (this.status === 'failed') {
+            return `Nice try! The word was "${this.word.join('')}".`
+        } else {
+            return 'Great work! You guessed the word.'
+        }
+    }
+    ```
+
 
 
