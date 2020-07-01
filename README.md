@@ -82,7 +82,7 @@ The following code shows how to use the combination of two API method calls. The
 ```javascript 
 const getCurrentCountry = async () => {
    const location = await getLocation()
-   return getCountry(location.country)
+   return getCountry(location.country) // this line calls the second API Method 
 }
 
 const getCountry = async (countryCode) => {
