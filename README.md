@@ -10,3 +10,11 @@ The general syntax of the Index.html file contains the following Javascript file
 -Hangman.js 
 -App.js 
 
+Volley offers the following benefits:
+
+- Automatic scheduling of network requests.
+- Multiple concurrent network connections.
+- Transparent disk and memory response caching with standard HTTP cache coherence.
+- Support for request prioritization.
+- Cancellation request API. You can cancel a single request, or you can set blocks or scopes of requests to cancel.
+
