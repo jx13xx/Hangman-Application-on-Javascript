@@ -6,9 +6,13 @@
  
 The general syntax of the Index.html file contains the following Javascript files 
 
--Requests 
--Hangman
--App
+- Requests 
+- Hangman
+- App
+
+- George Washington
+- John Adams
+- Thomas Jefferson
  
 Volley offers the following benefits:
 
