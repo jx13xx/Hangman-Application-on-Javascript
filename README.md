@@ -6,19 +6,12 @@
  
 The general syntax of the Index.html file contains the following Javascript files 
 
-- Requests 
-- Hangman
-- App
+- Requests.js
+- Hangman.js
+- App.js
 
-- George Washington
-- John Adams
-- Thomas Jefferson
- 
-Volley offers the following benefits:
 
-- Automatic scheduling of network requests.
-- Multiple concurrent network connections.
-- Transparent disk and memory response caching with standard HTTP cache coherence.
-- Support for request prioritization.
-- Cancellation request API. You can cancel a single request, or you can set blocks or scopes of requests to cancel.
 
+## App.js
+The *app.js* file contains all the event listeners, querySelectors(text fields and labels)
+It also uses the function render() to render the puzzle on the webpage 
