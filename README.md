@@ -51,6 +51,8 @@ window.addEventListener('keypress', (e) => { // there are multiple instances of 
 ```
 On the eventListener we give a second argument **e** this takes the instance of the eventListener we can use this to get the value from the EventListener function. In the code above the const variable **guess** takes the value from the EventListener and this is passed on to the *makeGuess()* function.
 
+## Requests.js
+
 ### Fetching the puzzle word from the API
 To fetch random puzzle words we derive it by fetching randoms from an API service. The function **startGame()** will be aync function which uses the **await** method that waits for the API to sent a response to the Hangman application. 
 ```javascript
