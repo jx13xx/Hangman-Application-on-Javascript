@@ -133,18 +133,18 @@ This OOP file contains the main architecutre of the Hangman Game contains differ
     }
     get statusMessage() {
         if (this.status === 'playing') {
-            return `Guesses left: ${this.remainingGuesses}`
+            return `Guesses left: ${this.remainingGuesses}
         } else if (this.status === 'failed') {
-            return `Nice try! The word was "${this.word.join('')}".`
+            return `Nice try! The word was "${this.word.join('')}"
         } else {
             return 'Great work! You guessed the word.'
         }
     }
-    ```
     
-    ## Explaing the makeGuess() function 
-    The 
-    ```javascript
+```
+## Explaing the makeGuess() function 
+The makeGuess() function called whenever the EventListener() gets an input from the keyword. The input 'guess' is taken from the keyboard and passed onto this fucntion. 
+```javascript
        makeGuess(guess) {
         guess = guess.toLowerCase()
         const isUnique = !this.guessedLetters.includes(guess)
@@ -163,10 +163,28 @@ This OOP file contains the main architecutre of the Hangman Game contains differ
         }
 
         this.calculateStatus()
-    }
-    
-    
-    ```
+    } 
+ ```
+### Puzzle() function explained
+This method is called at the render function in App.js. At the begining of the function it turns the puzzle word blank. i.e _ _ _ _ _ 
 
+Then it uses the forEach() method to check for every letter typed on the guessedLetter if it is present it shows the letter on the screen or else it it displays * 
+
+```javascript
+    get puzzle() {
+        let puzzle = ''
+
+        this.word.forEach((letter) => {
+            if (this.guessedLetters.includes(letter) || letter === ' ') {
+                puzzle += letter
+            } else {
+                puzzle += '*'
+            }
+        })
+
+        return puzzle
+    }
+ ```
+ 
 
 
