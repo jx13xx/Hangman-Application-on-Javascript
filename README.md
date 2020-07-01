@@ -5,6 +5,7 @@
  
  
 The general syntax of the Index.html file contains the following Javascript files 
+
 *Requests.js
 *Hangman.js 
 *App.js 
