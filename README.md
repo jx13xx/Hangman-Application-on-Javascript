@@ -40,5 +40,14 @@ const render = () => {
 ```
 
 ### Adding an Event Listener on the web browser
-The **EventTarget** meethod addEventListener()  <mark>Marked text</mark>
+The **EventTarget** method *addEventListener()* sets up a function that will be called whenevver the specified event is delivered to the target.
+
+```javascript
+window.addEventListener('keypress', (e) => { // there are multiple instances of the eventListener not just keypress 
+    const guess = String.fromCharCode(e.charCode)
+    game1.makeGuess(guess)
+    render()
+})
+```
+On the eventListener we give a second argument **e** this takes the instance of the eventListener we can use this to get the value from the EventListener function. In the code above the const variable **guess** takes the value from the EventListener and this is passed on to the *makeGuess()* function.
 
