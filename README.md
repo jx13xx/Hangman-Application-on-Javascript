@@ -51,3 +51,31 @@ window.addEventListener('keypress', (e) => { // there are multiple instances of 
 ```
 On the eventListener we give a second argument **e** this takes the instance of the eventListener we can use this to get the value from the EventListener function. In the code above the const variable **guess** takes the value from the EventListener and this is passed on to the *makeGuess()* function.
 
+### Fetching the puzzle word from the API
+To fetch random puzzle words we derive it by fetching randoms from an API service. The function **startGame()** will be aync function which uses the **await** method that waits for the API to sent a response to the Hangman application. 
+```javascript
+const startGame = async () => {
+    const puzzle = await getPuzzle('2')
+    game1 = new Hangman(puzzle, 5)
+    render()
+}
+```
+#### Method to check if the response from the server is correct or wrong
+Remember the status response code should always be 200 or else there might be some errors when the response is recevied from the server.
+
+```javascript
+const getPuzzle = async (wordCount) => {
+   const response = await fetch(`http://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
+   
+   if (response.status === 200) {
+       const data = await response.json()
+       return data.puzzle
+   } else {
+       throw new Error('Unable to get puzzle')
+   }
+}
+```
+
+  
+
+
