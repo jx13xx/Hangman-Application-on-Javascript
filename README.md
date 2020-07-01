@@ -76,6 +76,38 @@ const getPuzzle = async (wordCount) => {
 }
 ```
 
+### Combing two API Method calls 
+The following code shows how to use the combination of two API method calls. The API method is the **getCurrentCountry** async function which calls the *getLocation()* to fetch the country code depending on the IP address (It is an API). The return statement from the **getCurrentCountry**  will be pushed into calling the the **second API method** 
+
+```javascript 
+const getCurrentCountry = async () => {
+   const location = await getLocation()
+   return getCountry(location.country)
+}
+
+const getCountry = async (countryCode) => {
+   const response = await fetch('http://restcountries.eu/rest/v2/all')
+
+   if (response.status === 200) {
+       const data = await response.json()
+       return data.find((country) => country.alpha2Code === countryCode)
+   } else {
+       throw new Error('Unable to fetch the country')
+   }
+}
+
+const getLocation = async () => {
+   const response = await fetch('http://ipinfo.io/json?token=1a11bd55cc8f9c')
+
+   if (response.status === 200) {
+       return response.json()
+   } else {
+       throw new Error('Unable to get the current location')
+   }
+}
+
+
+```
   
 
 
