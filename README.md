@@ -6,10 +6,10 @@
  
 The general syntax of the Index.html file contains the following Javascript files 
 
--Requests.js
--Hangman.js 
--App.js 
-
+-Requests 
+-Hangman
+-App
+ 
 Volley offers the following benefits:
 
 - Automatic scheduling of network requests.
